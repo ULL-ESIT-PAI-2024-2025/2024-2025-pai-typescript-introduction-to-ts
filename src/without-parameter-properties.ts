@@ -1,11 +1,9 @@
 class Car {
   brand: string;
-  model: string;
-  year: number;
+  // ... more properties+
 
-  constructor(brand: string, model: string, year: number) {
+  constructor(brand: string) {
     this.brand = brand;
-    this.model = model;
-    this.year = year;
   }
 }
+

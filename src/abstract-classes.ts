@@ -1,9 +1,9 @@
 // Abstract class representing a sorting algorithm
 abstract class Algorithm {
-  protected name: string;
+  protected nameAlgorithm: string;
 
-  constructor(name: string) {
-    this.name = name;
+  constructor(nameAlgorithm: string) {
+    this.nameAlgorithm = nameAlgorithm;
   }
 
   // Abstract method that must be implemented by subclasses
@@ -11,14 +11,14 @@ abstract class Algorithm {
 
   // Concrete method shared by all subclasses
   describe(): void {
-    console.log(`This is the ${this.name} sorting algorithm.`);
+    console.log(`This is the ${this.nameAlgorithm} sorting algorithm.`);
   }
 }
 
 // BubbleSort class extending Algorithm
 class BubbleSort extends Algorithm {
   constructor() {
-    super("BubbleSort");
+    super('BubbleSort');
   }
 
   // Implementing the abstract method
@@ -38,7 +38,7 @@ class BubbleSort extends Algorithm {
 // QuickSort class extending Algorithm
 class QuickSort extends Algorithm {
   constructor() {
-    super("QuickSort");
+    super('QuickSort');
   }
 
   // Implementing the abstract method

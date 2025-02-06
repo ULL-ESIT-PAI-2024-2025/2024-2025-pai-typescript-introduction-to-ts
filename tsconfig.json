@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "module": "system",                       // Specifies the module system to use.
+    "noImplicitAny": true,                    // Prevents variables from implicitly having the 'any' type.
+    "removeComments": true,                   // Removes comments from the output files.
+    "preserveConstEnums": true,               // Keeps 'const enum' values in the compiled JavaScript.
+    "outDir": "./dist",                       // Directory where compiled JavaScript files will be placed.
+    "sourceMap": true,                        // Generates source maps for debugging.
+    "target": "ES2016",                       // Sets the JavaScript version to which TypeScript will compile.
+    "strict": true,                           // Enables all strict type-checking options.
+    "forceConsistentCasingInFileNames": true, // Ensures consistent file name casing across the project.
+    "skipLibCheck": true                      // Skips type checking of declaration files for faster builds.
+  },
+  "include": ["src/**/*"],                    // Includes all TypeScript files inside the 'src' folder.
+  "exclude": ["src/**/*.spec.ts"]             // Excludes test files with '.spec.ts' inside 'src'.
+}

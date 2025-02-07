@@ -4,67 +4,87 @@
  * Grado en Ingeniería Informática
  * Programación de Aplicaciones Interactivas 2024-2025
  *
- * @author Eric Bermúdez Hernández
+ * @authors Eric Bermúdez Hernández, Adrián Alejandro Padrón López, Diego Rodríguez Martín
  * @since 03 de Febrero, 2025
  * @desc abstract-classes.js
- *       Programa de ejemplo que ilustra la herencia de clases con clases abstractas
+ *       This file contains the implementation of a simple program that
+ *       demonstrates the use of abstract classes in TypeScript.
+ * @see {@link https://www.typescriptlang.org/docs/handbook/2/classes.html}
  * @see {@link https://www.npmjs.com/package/@types/readline-sync}
  */
 
 /**
- * @description Clase abstracta de la que heredan las hijas con un método abstracto
- * y un método concreto. Ambos que heredan las clases hijas
+ * @description Abstract class that defines the structure of a sorting algorithm
  */
 abstract class Algorithm {
   protected nameAlgorithm: string;
 
-  public constructor(nameAlgorithm: string) {
+  /**
+   * @description Constructor of the class Algorithm
+   * @param nameAlgorithm the name of the algorithm
+   */
+  protected constructor(nameAlgorithm: string) {
     this.nameAlgorithm = nameAlgorithm;
   }
 
-  // Abstract method that must be implemented by subclasses
+  /**
+   * @description Abstract method that must be implemented by the subclasses
+   * @param data The array to sort
+   * @returns The sorted array
+   */
   protected abstract sort(data: number[]): number[];
 
-  // Concrete method shared by all subclasses
+  /**
+   * @description Method that prints the name of the algorithm
+   * to the console
+   */
   public describe(): void {
     console.log(`This is the ${this.nameAlgorithm} sorting algorithm.`);
   }
 }
 
 /**
- * @description Clase hija que hereda de la clase abstracta, implementa su versión
- * del constructor y del método abstracto sort
+ * @description Subclass that extends the Algorithm class and implements
+ * the Bubble Sort algorithm
  */
 class BubbleSort extends Algorithm {
   public constructor() {
     super('BubbleSort');
   }
 
-  // Implementing the abstract method
+  /**
+   * @description Method that sorts the array using the Bubble Sort algorithm
+   * @param data The array to sort
+   * @returns The sorted array
+   */
   public sort(data: number[]): number[] {
-    let arrayay = [...data];
-    for (let i = 0; i < arrayay.length; i++) {
-      for (let j = 0; j < arrayay.length - i - 1; j++) {
-        if (arrayay[j] > arrayay[j + 1]) {
-          [arrayay[j], arrayay[j + 1]] = [arrayay[j + 1], arrayay[j]];
+    let array = [...data];
+    for (let i = 0; i < array.length; i++) {
+      for (let j = 0; j < array.length - i - 1; j++) {
+        if (array[j] > array[j + 1]) {
+          [array[j], array[j + 1]] = [array[j + 1], array[j]];
         }
       }
     }
-    return arrayay;
+    return array;
   }
 }
 
 /**
- * @description Clase hija que hereda de la clase abstracta, implementa su versión
- * del constructor y del método abstracto sort
+ * @description Subclass that extends the Algorithm class and implements
+ * the Quick Sort algorithm
  */
 class QuickSort extends Algorithm {
-  constructor() {
+  public constructor() {
     super('QuickSort');
   }
 
-  // Implementing the abstract method
-  sort(data: number[]): number[] {
+  /**
+   * @description Method that sorts the array using the Quick Sort algorithm
+   * @param data The array to sort
+   * @returns The sorted array
+   */
+  public sort(data: number[]): number[] {
     if (data.length <= 1) return data;
     let pivot = data[0];
     let left = data.slice(1).filter(n => n < pivot);
@@ -73,12 +93,16 @@ class QuickSort extends Algorithm {
   }
 }
 
-// Example usage
-const bubble = new BubbleSort();
-const quick = new QuickSort();
+function main() {
+  // Example usage
+  const bubble = new BubbleSort();
+  const quick = new QuickSort();
 
-bubble.describe();
-console.log("Sorted:", bubble.sort([5, 3, 8, 1, 2]));
+  bubble.describe();
+  console.log('Sorted:', bubble.sort([5, 3, 8, 1, 2]));
 
-quick.describe();
-console.log("Sorted:", quick.sort([5, 3, 8, 1, 2]));
+  quick.describe();
+  console.log('Sorted:', quick.sort([5, 3, 8, 1, 2]));
+}
+
+main();

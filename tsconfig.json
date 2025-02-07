@@ -35,7 +35,7 @@
     "forceConsistentCasingInFileNames": true,                 // Ensure consistent casing in file names
     "skipLibCheck": true                                      // Skips type checking of declaration files for faster builds. **
   },
-  "include": ["src/**/*"], // Includes all files located in path
+  "include": ["src/**/*"], // Includes in the compilation all files located in path
   "exclude": [
     "node_modules",        // Exclude dependencies folder
     "build",               // Exclude build artifacts

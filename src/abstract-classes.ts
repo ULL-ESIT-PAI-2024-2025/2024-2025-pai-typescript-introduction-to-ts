@@ -1,41 +1,63 @@
-// Abstract class representing a sorting algorithm
+/**
+ * Universidad de La Laguna
+ * Escuela Superior de Ingeniería y Tecnología
+ * Grado en Ingeniería Informática
+ * Programación de Aplicaciones Interactivas 2024-2025
+ *
+ * @author Eric Bermúdez Hernández
+ * @since 03 de Febrero, 2025
+ * @desc abstract-classes.js
+ *       Programa de ejemplo que ilustra la herencia de clases con clases abstractas
+ * @see {@link https://www.npmjs.com/package/@types/readline-sync}
+ */
+
+/**
+ * @description Clase abstracta de la que heredan las hijas con un método abstracto
+ * y un método concreto. Ambos que heredan las clases hijas
+ */
 abstract class Algorithm {
   protected nameAlgorithm: string;
 
-  constructor(nameAlgorithm: string) {
+  public constructor(nameAlgorithm: string) {
     this.nameAlgorithm = nameAlgorithm;
   }
 
   // Abstract method that must be implemented by subclasses
-  abstract sort(data: number[]): number[];
+  protected abstract sort(data: number[]): number[];
 
   // Concrete method shared by all subclasses
-  describe(): void {
+  public describe(): void {
     console.log(`This is the ${this.nameAlgorithm} sorting algorithm.`);
   }
 }
 
-// BubbleSort class extending Algorithm
+/**
+ * @description Clase hija que hereda de la clase abstracta, implementa su versión
+ * del constructor y del método abstracto sort
+ */
 class BubbleSort extends Algorithm {
-  constructor() {
+  public constructor() {
     super('BubbleSort');
   }
 
   // Implementing the abstract method
-  sort(data: number[]): number[] {
-    let arr = [...data];
-    for (let i = 0; i < arr.length; i++) {
-      for (let j = 0; j < arr.length - i - 1; j++) {
-        if (arr[j] > arr[j + 1]) {
-          [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
+  public sort(data: number[]): number[] {
+    let array = [...data];
+    for (let i = 0; i < array.length; i++) {
+      for (let j = 0; j < array.length - i - 1; j++) {
+        if (array[j] > array[j + 1]) {
+          [array[j], array[j + 1]] = [array[j + 1], array[j]];
         }
       }
     }
-    return arr;
+    return array;
   }
 }
 
-// QuickSort class extending Algorithm
+/**
+ * @description Clase hija que hereda de la clase abstracta, implementa su versión
+ * del constructor y del método abstracto sort
+ */
 class QuickSort extends Algorithm {
   constructor() {
     super('QuickSort');

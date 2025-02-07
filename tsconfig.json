@@ -7,14 +7,12 @@
  * @author Eric Bermúdez Hernández
  * @since 03 de Febrero, 2025
  * @desc tsconfig.json
- *       Programa que dados dos elementos entre Agua(A), Piedra(P) y Viento(V), hay que decir quien gana el enfrentamiento 
- *       teniendo en cuenta que: El agua (A) vence a la piedra (P) que a su vez vence al viento (V) que vence al agua.
- *       Se muestra por pantalla un 1 si vence el primero, el número 2 si vence el segundo, o un guión (‘-’) si se produce un empate.
- * @see {@link https://jutge.org/problems/P70955}
- * @see {@link https://www.npmjs.com/package/@types/readline-sync}
+ *       A usual tsconfig that is very usefull for this subject. 
+         To see an explication of each compiler option. See the link below.
+ * @see {@link https://www.typescriptlang.org/tsconfig/}
  */
 
-{
+ {
   "display": "Configuration for Graphics Programming in PAI", // Description of the project setup
   "compilerOptions": {
     "moduleResolution": "node",                               // Use Node.js module resolution strategy

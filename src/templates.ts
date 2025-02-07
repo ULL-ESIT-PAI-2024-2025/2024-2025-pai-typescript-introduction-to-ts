@@ -1,7 +1,7 @@
 class Pair<T, U> {
   private first: T;
   private second: U;
-  
+
   constructor(first: T, second: U) {
     this.first = first;
     this.second = second;

@@ -1,16 +1,55 @@
+/**
+ * Universidad de La Laguna
+ * Escuela Superior de Ingeniería y Tecnología
+ * Grado en Ingeniería Informática
+ * Programación de Aplicaciones Interactivas 2024-2025
+ *
+ * @author Eric Bermúdez Hernández
+ * @since 03 de Febrero, 2025
+ * @desc tsconfig.json
+ *       Programa que dados dos elementos entre Agua(A), Piedra(P) y Viento(V), hay que decir quien gana el enfrentamiento 
+ *       teniendo en cuenta que: El agua (A) vence a la piedra (P) que a su vez vence al viento (V) que vence al agua.
+ *       Se muestra por pantalla un 1 si vence el primero, el número 2 si vence el segundo, o un guión (‘-’) si se produce un empate.
+ * @see {@link https://jutge.org/problems/P70955}
+ * @see {@link https://www.npmjs.com/package/@types/readline-sync}
+ */
+
 {
+  "display": "Configuration for Graphics Programming in PAI", // Description of the project setup
   "compilerOptions": {
-    "module": "system",                       // Specifies the module system to use.
-    "noImplicitAny": true,                    // Prevents variables from implicitly having the 'any' type.
-    "removeComments": true,                   // Removes comments from the output files.
-    "preserveConstEnums": true,               // Keeps 'const enum' values in the compiled JavaScript.
-    "outDir": "./dist",                       // Directory where compiled JavaScript files will be placed.
-    "sourceMap": true,                        // Generates source maps for debugging.
-    "target": "ES2016",                       // Sets the JavaScript version to which TypeScript will compile.
-    "strict": true,                           // Enables all strict type-checking options.
-    "forceConsistentCasingInFileNames": true, // Ensures consistent file name casing across the project.
-    "skipLibCheck": true                      // Skips type checking of declaration files for faster builds.
+    "moduleResolution": "node",                               // Use Node.js module resolution strategy
+    "esModuleInterop": true,                                  // Enables interoperability between CommonJS and ES modules
+    "target": "es2022",                                       // Compile TypeScript code to ECMAScript 2022
+    "removeComments": true,                                   // Removes comments from the output files. 
+    "module": "ES6",                                          // Use ECMAScript 6 module system
+    "sourceMap": true,                                        // Generates source maps for debugging. 
+    "allowJs": true,                                          // Allow JavaScript files to be compiled
+    "rootDir": "./",                                          // Specify the root directory of the project
+    "outDir": "./web/dist",                                   // Output compiled files to this directory
+    "declaration": true,                                      // Generate .d.ts declaration files for TypeScript files
+    "alwaysStrict": true,                                     // Parse code in strict mode and emit "use strict"
+    "strict": true,                                           // Enable all strict type-checking options
+    "lib": ["ESNext", "dom"],                                 // Include ESNext and DOM library features
+    "noImplicitAny": true,                                    // Disallow variables of type 'any' unless explicitly declared
+    "noFallthroughCasesInSwitch": true,                       // Prevent fallthrough cases in switch statements
+    "noImplicitReturns": true,                                // Ensure all function paths return a value
+    "noUnusedLocals": true,                                   // Report errors for unused local variables
+    "forceConsistentCasingInFileNames": true,                 // Ensure consistent casing in file names
+    "skipLibCheck": true                                      // Skips type checking of declaration files for faster builds. **
   },
-  "include": ["src/**/*"],                    // Includes all TypeScript files inside the 'src' folder.
-  "exclude": ["src/**/*.spec.ts"]             // Excludes test files with '.spec.ts' inside 'src'.
+  "include": ["src/**/*"], // Includes all files located in path
+  "exclude": [
+    "node_modules",        // Exclude dependencies folder
+    "build",               // Exclude build artifacts
+    "lib",                 // Exclude compiled library files
+    "test",                // Exclude test files
+    "public",              // Exclude public assets folder
+    "dist",                // Exclude distribution folder
+    "web/docs",            // Exclude documentation files
+    "search.js",           // Exclude specific JavaScript file
+    "main.js",             // Exclude specific JavaScript file
+    "go-back-function.js", // Exclude specific JavaScript file
+    "app.js",              // Exclude specific JavaScript file
+    "web"                  // Exclude web-related files
+  ]
 }

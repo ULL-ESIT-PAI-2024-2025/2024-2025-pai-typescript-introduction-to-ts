@@ -3,4 +3,4 @@ class Person {
 }
 
 let me = new Person();
-me.DNI = "43573212K"
+me.DNI = '43573212K';

@@ -18,14 +18,17 @@
  */
 class Car {
   private brand: string;
-  // ... more properties
+  private model: string
+  private year: number
 
   /**
    * @description Constructor of the class Car
    * @param brand The brand of the car
    */
-  public constructor(brand: string) {
+  public constructor(brand: string, model: string, year: number) {
     this.brand = brand;
+    this.model = model;
+    this.year = year;
   }
 
   /**
@@ -35,5 +38,20 @@ class Car {
   public getBrand(): string {
     return this.brand;
   }  
-}
 
+  /**
+   * @description Method to get the model of the car
+   * @returns The model of the car
+   */
+  public getModel(): string {
+    return this.model;
+  }
+
+  /**
+   * @description Method to get the year of the car
+   * @returns The year of the car
+   */
+  public getYear(): number {
+    return this.year;
+  }
+}
